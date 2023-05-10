@@ -1,0 +1,28 @@
+#Create variables for different files and companies
+from datetime import date
+import os
+global raw_csv_file
+
+dateTimeObj = date.today()
+
+# Raw Data will be stored in the following file
+
+raw_csv_file = os.getcwd()+"\\Job_Portal_Analysis"+str(dateTimeObj)+".csv"
+print(raw_csv_file)
+
+#Processed data will be stored in the following file
+
+processed_csv_file = os.getcwd()+"\\sc"+str(dateTimeObj)+".csv"
+
+# based on the below key words , search will be done on naukri.com
+keywords = ["DataScience"]
+
+#The script will scrape the data Based on the below page_count variable.
+page_count = 200
+
+# Get the actual URLs with a list comprehension using the above List
+
+# company_pages = ["https://www.naukri.com/"+keywords+"-jobs-1in-hyderabad-secunderabad-secunderabad"” for company in comp
+company_pages = ["https://www.naukri.com/"+keyword+"-jobs" for keyword in keywords]
+
+print(company_pages)
